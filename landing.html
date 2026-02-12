@@ -1,79 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bumble Studio - Protect Sea Creatures</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1 class="text-center my-3">Bumble Studio</h1>
-      <!-- Navigation Bar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="container">
-          <a class="navbar-brand" href="#">Bumble</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="landing.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pattern of Thought</title>
 
-      <!-- Hero Image with Text Overlay -->
-      <div class="hero-image mb-6">
-        <img src="Images/paper.jpg" alt="Bumble Studio Hero" />
-        <div class="hero-overlay">
-          <h1 class="display-3 fw-bold">Unaware of what OCD is?</h1>
-          <p class="lead mt-3">Join the movement to learn more about OCD and how it affects someone!.</p>
-          <a href="signup.html" class="btn btn-lg btn-light mt-3 fw-semibold">Start Learning</a>
-        </div>
-      </div>
-    </header>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <main class="container my-5">
-      <section>
-        <h2>Content</h2>
-        <p>Your content goes here</p>
-      </section>
-    </main>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <footer class="footer bg-light border-top py-3">
-      <div class="container d-flex justify-content-between align-items-center">
-        <span class="text-muted">&copy; 2025 Company, Inc</span>
-        <ul class="list-unstyled d-flex mb-0">
-          <li class="ms-3"><a href="#" class="footer-link">Instagram</a></li>
-          <li class="ms-3"><a href="#" class="footer-link">Facebook</a></li>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="landing.html">
+        <img src="images/bumblestudio logo.jpeg" alt="Logo" width="50" height="50" class="rounded-circle me-2">
+        Pattern of Thought
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="landing.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
         </ul>
       </div>
-    </footer>
+    </div>
+  </nav>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <!-- Hero Section -->
+  <header class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+    <div class="overlay"></div>
+    <div class="hero-content fade-in">
+      <h1 class="display-3 fw-bold">Unaware of what OCD is?</h1>
+      <p class="lead mt-3">Join this movement to learn more about OCD and how it affects someone.</p>
+      <a href="signup.html" class="btn btn-lg btn-light mt-3 fw-semibold">Start Learning</a>
+    </div>
+  </header>
+
+  <!-- Content Sections -->
+  <main>
+    <section class="container text-center py-5 fade-in">
+      <h2 class="fw-bold">Ever thought of what it's like to live with OCD?</h2>
+      <p class="mt-3">Here's an extended version of your paragraph with more depth and flow:
+
+        We've created a simple and easy-to-understand experience to help you grasp a deeper understanding. By breaking
+        down complex ideas into clear, relatable steps, the experience guides you through each concept at a comfortable
+        pace, ensuring that nothing feels overwhelming. Interactive elements encourage active participation, making the
+        learning process more engaging and memorable. The goal is not only to simplify the material but also to provide
+        meaningful context, so you can connect new knowledge to real-world situations. This way, you walk away with both
+        clarity and confidence, ready to apply what you've learned in practical ways.
+      </p>
+    </section>
+
+    <section class="dark-section text-center py-5 fade-in">
+      <h2 class="fw-bold">What is OCD?</h2>
+      <p class="mt-3">Obsessive-compulsive disorder (OCD) is a mental health condition characterized by a cycle of
+        obsessions and compulsions. Obsessions are unwanted, intrusive thoughts, images, or urges that cause distress or
+        anxiety, while compulsions are repetitive behaviors or mental acts performed to reduce that distress or prevent
+        a
+        feared outcome. For example, someone might have an obsessive fear of germs and respond with compulsive
+        handwashing.
+        Even though the person may recognize that these thoughts and behaviors are excessive, they often feel driven to
+        continue them, which can interfere with daily life and cause significant emotional strain. OCD is considered an
+        anxiety-related disorder and can vary in severity, but effective treatments such as cognitive behavioral therapy
+        (CBT) and certain medications are available.
+      </p>
+    </section>
+
+    <section class="container text-center py-5 fade-in">
+      <h2 class="fw-bold">Ready to dive in?</h2>
+      <p class="mt-3">Start your journey to understanding OCD through our immersive experiences!</p>
+      <a href="signup.html" class="btn btn-ocean btn-lg fw-semibold">Start Now</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light py-4 fade-in">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>&copy; 2025 Pattern of Thought</span>
+      <ul class="list-unstyled d-flex mb-0">
+        <li class="ms-3"><a href="https://www.instagram.com/bumblestudos/" class="footer-link">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Animation JS -->
+  <script>
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+
 </html>
