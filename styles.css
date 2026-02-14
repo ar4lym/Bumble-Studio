@@ -36,6 +36,28 @@ main {
   color: #007bff;
   border-bottom: 2px solid #007bff;
 }
+#playersChart {
+  width: 300px !important;
+  height: 300px !important;
+  margin: 0 auto; /* center it */
+}
+
+#scenesChart {
+  width: 100% !important;   /* bar chart stays full width */
+  height: 300px !important;
+}
+
+
+/* Optional: make the cards same height so charts align */
+.card p {
+  min-height: 40px; /* ensures text above canvas doesn't make cards uneven */
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 
 /* === Index Page === */
