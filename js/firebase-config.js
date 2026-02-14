@@ -234,3 +234,70 @@ onAuthStateChanged(auth, async (user) => {
     achievementsContainer.innerHTML += card;
   }
 });
+
+
+
+// Fetch player data
+  async function loadData() {
+    const playersRef = ref(db, "players");
+    const snapshot = await get(playersRef);
+
+    if (!snapshot.exists()) return;
+
+    const players = snapshot.val();
+    const playerCount = Object.keys(players).length;
+
+    // Count scene plays
+    const sceneCounts = {};
+    for (const uid in players) {
+      const player = players[uid];
+      if (player.scenes) {
+        for (const sceneName in player.scenes) {
+          sceneCounts[sceneName] = (sceneCounts[sceneName] || 0) + 1;
+        }
+      }
+    }
+
+    renderCharts(playerCount, sceneCounts);
+  }
+
+  // Render charts with Chart.js
+  function renderCharts(playerCount, sceneCounts) {
+    // Chart: Number of Players
+    new Chart(document.getElementById("playersChart"), {
+      type: "doughnut",
+      data: {
+        labels: ["Players"],
+        datasets: [{
+          label: "Total Players",
+          data: [playerCount],
+          backgroundColor: "#4CAF50"
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    // Chart: Most Played Scene
+    new Chart(document.getElementById("scenesChart"), {
+      type: "bar",
+      data: {
+        labels: Object.keys(sceneCounts),
+        datasets: [{
+          label: "Times Played",
+          data: Object.values(sceneCounts),
+          backgroundColor: "#2196F3"
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: "Scene Play Counts"
+          }
+        }
+      }
+    });
+  }
+
+  loadData();

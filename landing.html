@@ -55,32 +55,28 @@
     <!-- <summary>Section displaying key statistics with charts for downloads and best cleanup times</summary> -->
     <section class="container my-5">
         <div class="row g-4 justify-content-center">
-
-            <!-- <summary>Total Downloads Card with chart and numeric display</summary> -->
-            <div class="col-md-5">
-                <div class="card shadow rounded-4 text-center p-3">
-                    <h5 class="fw-bold text-primary mb-3">Total Downloads</h5>
-                    <!-- <summary>Canvas element for rendering total downloads chart</summary> -->
-                    <div
-                        style="width: 150px; height: 240px; margin: auto; display: flex; justify-content: center; align-items: center;">
-                        <canvas id="downloadsChart"></canvas>
-                    </div>
-                    <!-- <summary>Text element to display total downloads count dynamically</summary> -->
-                    <h3 id="totalsText" class="fw-bold mt-3"></h3>
-                </div>
-            </div>
-
-            <!-- <summary>Best Cleanup Time per Habitat card with chart</summary> -->
+    
+    
             <div class="col-md-6">
                 <div class="card shadow rounded-4 text-center p-3">
-                    <h5 class="fw-bold text-primary mb-3">Best Cleanup Time per Experience</h5>
-                    <!-- <summary>Canvas element for rendering best time per habitat chart</summary> -->
-                    <canvas id="habitatBestChart"></canvas>
+                    <h5 class="fw-bold text-primary mb-3">Number of Players</h5>
+                    <canvas id="playersChart"></canvas>
                 </div>
             </div>
-
+    
+    
+            <!-- <summary>Best Cleanup Time per Habitat card with chart</summary> -->
+            <!-- Chart: Most Played Scene -->
+            <div class="col-md-6">
+                <div class="card shadow rounded-4 text-center p-3">
+                    <h5 class="fw-bold text-primary mb-3">Most Played Scene</h5>
+                    <canvas id="scenesChart"></canvas>
+                </div>
+            </div>
+    
         </div>
     </section>
+    
 
     <!-- <summary>Explore section with interactive cards linking to Redeem, Leaderboard, and About Us</summary> -->
     <section class="container my-5">
