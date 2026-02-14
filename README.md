@@ -34,20 +34,12 @@ real-time and large-scale usage.
         -Best Time
     -Username
 
-
-    
-
-Application Data Flow: 
-Describe how data is processed, stored, and retrieved within the application. 
-
 Badges - When player has one the specific gameplay in a set amount of requirements 
 such as doing it all under 3 miniutes, the achievement will then be issued to them, it is stored into the firebase.
 It will be stored as the Scene name that they gotten the achievement. The achievement holds the scene that
 they got it at, the name of the achievement called (E.g Fastest Park Cleaner, Completed the Park scene in under 3 min).
 
 Scene entry - Scene which the player entered is shown, along with the best time being recorded of the player completing the scene.
-
-
 
 Design Process 
 The website was designed to be visually appealing, responsive, and user-friendly. Each page 
