@@ -187,6 +187,54 @@ filterButtons.forEach((button) => {
   });
 });
 
+const allTimingsBody = document.getElementById("allTimingsBody");
+
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    allTimingsBody.innerHTML = `<tr><td colspan="3">Please log in to see your timings.</td></tr>`;
+    return;
+  }
+
+  const uid = user.uid;
+
+  // Fetch the current user's sceneEntries
+  const userRef = ref(db, `players/${uid}/sceneEntries`);
+  const snapshot = await get(userRef);
+
+  if (!snapshot.exists()) {
+    allTimingsBody.innerHTML = `<tr><td colspan="3">No timings yet.</td></tr>`;
+    return;
+  }
+
+  const sceneEntries = snapshot.val();
+
+  // Clear table
+  allTimingsBody.innerHTML = "";
+
+  // Convert to array and sort by fastest time
+  const entriesArray = [];
+  for (const scene in sceneEntries) {
+    const bestTime = sceneEntries[scene].bestTime;
+    if (bestTime != null) {
+      entriesArray.push({ scene, time: parseFloat(bestTime) });
+    }
+  }
+
+  // Sort ascending (fastest first)
+  entriesArray.sort((a, b) => a.time - b.time);
+
+  // Render table rows
+  entriesArray.forEach(entry => {
+    allTimingsBody.innerHTML += `
+      <tr>
+        <td>${entry.scene}</td>
+        <td>${entry.time.toFixed(2)}</td>
+      </tr>
+    `;
+  });
+});
+
+
 const achievementsContainer = document.getElementById("achievementsContainer");
 
 onAuthStateChanged(auth, async (user) => {
@@ -235,69 +283,105 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
+async function loadData() {
+  const playersRef = ref(db, "players");
+  const snapshot = await get(playersRef);
 
+  if (!snapshot.exists()) return;
 
-// Fetch player data
-  async function loadData() {
-    const playersRef = ref(db, "players");
-    const snapshot = await get(playersRef);
+  const players = snapshot.val();
 
-    if (!snapshot.exists()) return;
+  // TOTAL players
+  const playerCount = Object.keys(players).length;
 
-    const players = snapshot.val();
-    const playerCount = Object.keys(players).length;
+  const scenes = [
+    "Bedroom",
+    "Park",
+    "Tiles",
+    "BenchCleaning",
+    "ConvenienceStore",
+  ];
 
-    // Count scene plays
-    const sceneCounts = {};
-    for (const uid in players) {
-      const player = players[uid];
-      if (player.scenes) {
-        for (const sceneName in player.scenes) {
-          sceneCounts[sceneName] = (sceneCounts[sceneName] || 0) + 1;
+  const sceneCompletionCounts = {
+    Bedroom: 0,
+    Park: 0,
+    Tiles: 0,
+    BenchCleaning: 0,
+    ConvenienceStore: 0,
+  };
+
+  // Loop players
+  for (const uid in players) {
+    const player = players[uid];
+
+    if (!player.sceneEntries) continue;
+
+    scenes.forEach((scene) => {
+      if (
+        player.sceneEntries[scene] &&
+        player.sceneEntries[scene].bestTime != null
+      ) {
+        sceneCompletionCounts[scene]++;
+      }
+    });
+  }
+
+  renderCharts(playerCount, sceneCompletionCounts);
+}
+
+// Render BOTH charts
+function renderCharts(playerCount, sceneCounts) {
+
+  // DOUGHNUT = TOTAL PLAYERS
+  new Chart(document.getElementById("playersChart"), {
+    type: "doughnut",
+    data: {
+      labels: ["Players"],
+      datasets: [{
+        label: "Total Players",
+        data: [playerCount],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: "Total Players"
         }
       }
     }
+  });
 
-    renderCharts(playerCount, sceneCounts);
-  }
-
-  // Render charts with Chart.js
-  function renderCharts(playerCount, sceneCounts) {
-    // Chart: Number of Players
-    new Chart(document.getElementById("playersChart"), {
-      type: "doughnut",
-      data: {
-        labels: ["Players"],
-        datasets: [{
-          label: "Total Players",
-          data: [playerCount],
-          backgroundColor: "#4CAF50"
-        }]
+  // BAR = SCENE COMPLETIONS
+  new Chart(document.getElementById("scenesChart"), {
+    type: "bar",
+    data: {
+      labels: Object.keys(sceneCounts),
+      datasets: [{
+        label: "Players Completed",
+        data: Object.values(sceneCounts),
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: "Scene Completion Count"
+        }
       },
-      options: { responsive: true }
-    });
-
-    // Chart: Most Played Scene
-    new Chart(document.getElementById("scenesChart"), {
-      type: "bar",
-      data: {
-        labels: Object.keys(sceneCounts),
-        datasets: [{
-          label: "Times Played",
-          data: Object.values(sceneCounts),
-          backgroundColor: "#2196F3"
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          title: {
-            display: true,
-            text: "Scene Play Counts"
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1,
+            precision: 0
           }
         }
       }
-    });
-  }
+    }
+  });
+}
 
-  loadData();
+loadData();

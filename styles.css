@@ -5,6 +5,11 @@ body {
   color: #333;
   margin-top: 70px; /* offset for fixed navbar */
   background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* fill full viewport */
+  margin: 0;
+  padding-top: 70px; /* offset for fixed navbar */
 }
 h1, h2, h3, h4 {
   font-weight: 600;
@@ -12,7 +17,9 @@ h1, h2, h3, h4 {
 p {
   color: #453e3e;
 }
-
+main {
+  flex: 1; /* main takes all remaining space */
+}
 /* === Navbar === */
 .navbar {
   background-color: #fff;
