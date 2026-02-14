@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,12 +15,13 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="landing.html">
-        <img src="images/bumblestudio logo.jpeg" alt="Logo" width="50" height="50" class="rounded-circle me-2">
+        <img src="images/bumblestudiologo.png" alt="Logo" width="70" height="50">
         Pattern of Thought
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,9 +29,10 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="landing.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
           <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievement.html">Achievement</a></li>
         </ul>
       </div>
     </div>
@@ -37,10 +40,70 @@
 
   <!-- Team Section -->
   <main class="container my-5 pt-5">
-    <section class="text-center fade-in">
-      <h2 class="fw-bold">Our Team</h2>
-      <p class="lead text-muted">The ones that keep the experience running</p>
+    <section class="fade-in py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-3">Our Team</h2>
+        <p class="text-muted mb-4">
+          A dedicated group of creators combining technical skill, artistry, and vision to bring Pattern of Thought to
+          life.
+          <br></br>
+          Realising the gap in the understanding of OCD and what it really is, often passed off as something minor to
+          non-OCD people, results in those who suffer from OCD being misunderstood, overlooked, and at times dismissed.
+          This lack of awareness can make their struggles feel invisible, even though the condition deeply impacts their
+          daily lives.
+        </p>
+        <div class="d-flex justify-content-center">
+          <div class="border-top border-3 border-success w-25"></div>
+        </div>
+      </div>
     </section>
+
+
+
+
+    <section class="fade-in mb-5">
+      <div class="row">
+        <!-- Card: Our Game -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Our Game</h5>
+              <p class="card-text">
+                Experience life through the eyes of someone living with OCD, and see how it can affect their daily
+                routines and interactions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Our Mission -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Our Mission</h5>
+              <p class="card-text">
+                To create empathy and understanding by immersing players in the challenges faced by individuals with
+                OCD.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Our Goal -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">Our Goal</h5>
+              <p class="card-text">
+                We hope players will learn more about OCD and help reduce stigma by fostering compassion and awareness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 
     <div class="team-row fade-in">
       <div class="team-card">
@@ -77,6 +140,8 @@
         <p>Our main modeller that pulls the project together with her attention to detail.</p>
         <small>Modeller</small>
       </div>
+
+
     </div>
   </main>
 
@@ -107,4 +172,5 @@
     faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
 </body>
+
 </html>

@@ -1,42 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Scene Popularity</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 30px; background: #f9f9f9; }
-    h1 { color: #333; }
-    table { border-collapse: collapse; width: 50%; background: #fff; }
-    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
-    th { background-color: #4CAF50; color: white; }
-  </style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Leaderboard</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <h1>Scene Popularity</h1>
-  <table id="sceneTable">
-    <thead>
-      <tr>
-        <th>Scene Name</th>
-        <th>Visits</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
 
+<body class="bg-light">
+
+  <!-- <summary>Navigation bar with brand logo and page links</summary> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="landing.html">
+        <img src="images/bumblestudiologo.png" alt="Logo" width="70" height="50">
+        Pattern of Thought
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="leaderboard.html">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievement.html">Achievement</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- <summary>Hero banner displaying page title and description</summary> -->
+  <header class="text-center text-white py-5 hero-banner fade-in">
+    <!-- <summary>Page headline for leaderboard</summary> -->
+    <h1 class="fw-bold">Live Leaderboard</h1>
+    <!-- <summary>Subheading describing leaderboard purpose</summary> -->
+    <p class="lead">See which are the top players and which is our most played experience!</p>
+  </header>
+
+  
+
+  <!-- <summary>Buttons to filter leaderboard by Scene type</summary> -->
+  <div class="text-center mb-4 fade-in">
+    <button class="btn btn-ocean me-2 filter-btn" data-Scene="all">All</button>
+    <button class="btn btn-ocean me-2 filter-btn" data-Scene="Park">Park</button>
+    <button class="btn btn-ocean me-2 filter-btn" data-Scene="Bedroom">Bedroom</button>
+    <button class="btn btn-ocean me-2 filter-btn" data-Scene="Outdoor">Outdoor</button>
+    <button class="btn btn-ocean me-2 filter-btn" data-Scene="BenchCleaning">Bench Cleaning</button>
+  </div>
+
+  <!-- <summary>Leaderboard section displaying top cleaners with rank, name, experience, and time</summary> -->
+  <section class="container my-5 fade-in">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="card shadow-lg rounded-4">
+          <div class="card-header bg-primary text-white text-center py-3">
+            <h3 class="mb-0">Top Competitors</h3>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover text-center">
+              <thead class="table-primary">
+                <tr>
+                  <th>Rank</th>
+                  <th>Username</th>
+                  <th>Experience</th>
+                  <th>Time (sec)</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardTableBody">
+                <!-- JavaScript will insert rows here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <summary>Section displaying user's personal timings for Scene cleanups</summary> -->
+  <section class="container my-5 fade-in">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow rounded-4">
+          <div class="card-header bg-secondary text-white text-center">
+            <h4 class="mb-0">Your Timings</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-sm table-striped text-center">
+              <thead class="table-secondary">
+                <tr>
+                  <th>Username</th>
+                  <th>Experience</th>
+                  <th>Animal</th>
+                  <th>Time (sec)</th>
+                </tr>
+              </thead>
+              <tbody id="allTimingsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <summary>Footer section containing copyright and social media links</summary> -->
+  <footer class="footer bg-dark text-light py-4 fade-in">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 Bumble Studios. All rights reserved.</p>
+      <small>Follow us on
+        <a href="https://www.instagram.com/bumblestudos/" class="footer-link">Instagram</a>
+      </small>
+    </div>
+  </footer>
+
+  <!-- <summary>Scripts for jQuery, Bootstrap JS, and Firebase configuration</summary> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module">
-    import { listenToLeaderboard } from "./firebase.js";
+    import { firebaseconfig } from "./js/firebase-config.js";
+  </script>
 
-    const tbody = document.querySelector("#sceneTable tbody");
-
-    // Call the leaderboard listener
-    listenToLeaderboard((counts) => {
-      console.log("📊 Leaderboard:", counts);
-
-      tbody.innerHTML = "";
-      for (let scene in counts) {
-        let row = `<tr><td>${scene}</td><td>${counts[scene]}</td></tr>`;
-        tbody.innerHTML += row;
-      }
-    });
+  <!-- <summary>Animation script for fade-in on scroll</summary> -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
 </body>
 </html>

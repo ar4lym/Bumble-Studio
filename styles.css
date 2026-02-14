@@ -31,10 +31,10 @@ p {
 }
 
 
-/* === Landing Page === */
+/* === Index Page === */
 .hero-section {
   position: relative;
-  background: url('Images/paper.jpg') no-repeat center center/cover;
+  background: url('images/paper.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@ p {
   color: #fff;
 }
 .btn-ocean {
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  background: linear-gradient(135deg, #c1dfe6, #6993aa);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -125,7 +125,7 @@ p {
 
 /* Hero banner styled like About page header */
 .hero-banner {
-  background: linear-gradient(to bottom, #009ffd, #2a2a72);
+  background: linear-gradient(to bottom, #c1dfe6, #6993aa);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .hero-banner h1 {
@@ -142,7 +142,7 @@ p {
   margin: 5px;
 }
 .btn-ocean {
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  background: linear-gradient(135deg, #c1dfe6, #6993aa);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -211,14 +211,14 @@ p {
 
 /* === Sign Up & Login Pages === */
 
-/* Background matches landing page */
+/* Background matches index page */
 .paper-bg {
-  background: url('Images/paper.jpg') no-repeat center center/cover;
+  background: url('images/paper.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   min-height: 100vh;
 }
 
-/* Card styling consistent with landing/about aesthetic */
+/* Card styling consistent with index/about aesthetic */
 .signup-card {
   background: #fff;
   border-radius: 15px;
@@ -247,10 +247,10 @@ p {
   outline: none;
 }
 
-/* Buttons consistent with landing page gradient style */
+/* Buttons consistent with index page gradient style */
 .btn-signup,
 .btn-ocean {
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  background: linear-gradient(135deg, #6993aa, #6993aa);
   border: none;
   padding: 12px;
   font-weight: 600;
@@ -264,7 +264,7 @@ p {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Links styled like landing page footer links */
+/* Links styled like index page footer links */
 .ocean-link {
   color: #007bff;
   font-weight: 600;
@@ -274,7 +274,7 @@ p {
   color: #0056b3;
 }
 
-/* Fade-in animation consistent with landing page */
+/* Fade-in animation consistent with index page */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -284,3 +284,5 @@ p {
   opacity: 1;
   transform: translateY(0);
 }
+
+
