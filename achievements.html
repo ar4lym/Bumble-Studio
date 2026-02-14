@@ -1,75 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Achievements</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Achievements</title>
+    
+        <!-- <summary>Google Fonts for typography</summary> -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+        <!-- <summary>Bootstrap CSS for responsive layout and styling</summary> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+        <!-- <summary>Custom CSS for Pattern of Thought homepage</summary> -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <body class="bg-light">
+        <!-- <summary>Navigation bar with brand logo and page links</summary> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+            <div class="container">
+            <a class="navbar-brand fw-bold" href="landing.html">
+                <img src="images/bumblestudiologo.png" alt="Logo" width="70" height="50">
+                Pattern of Thought
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link active" href="achievements.html">Achievement</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+        <!-- <summary>Header section introducing the achievements page</summary> -->
+        <header class="text-center text-white py-5" style="background: #6993aa">
+        <h1>Your Achievements</h1>
+        </header>
 
-  <body class="bg-light">
-    <!-- <summary>Navigation bar with brand logo and page links</summary> -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="landing.html">
-        <img src="images/bumblestudiologo.png" alt="Logo" width="70" height="50">
-        Pattern of Thought
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link active" href="achievements.html">Achievement</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <!-- <summary>Main container for dynamically loaded achievements</summary> -->
+        <main class="container py-5">
+        <div class="row" id="achievementsContainer"></div>
+        </main>
 
-    <header class="text-center text-white py-5" style="background: #076eff">
-      <h1>Your Achievements</h1>
-    </header>
+        <!-- <summary>Footer with copyright and social media links</summary> -->
+        <footer class="footer bg-dark text-light py-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>&copy; 2025 Pattern of Thought</span>
+            <ul class="list-unstyled d-flex mb-0">
+            <li class="ms-3">
+                <a
+                href="https://www.instagram.com/bumblestudos/"
+                class="footer-link"
+                >Instagram</a
+                >
+            </li>
+            </ul>
+        </div>
+        </footer>
 
-    <main class="container py-5">
-      <div class="row" id="achievementsContainer"></div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer bg-dark text-light py-4">
-      <div class="container d-flex justify-content-between align-items-center">
-        <span>&copy; 2025 Pattern of Thought</span>
-        <ul class="list-unstyled d-flex mb-0">
-          <li class="ms-3">
-            <a
-              href="https://www.instagram.com/bumblestudos/"
-              class="footer-link"
-              >Instagram</a
-            >
-          </li>
-        </ul>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module">
-      import { firebaseconfig } from "./js/firebase-config.js";
-    </script>
-  </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module">
+        import { firebaseconfig } from "./js/firebase-config.js";
+        </script>
+    </body>
 </html>

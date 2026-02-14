@@ -1,144 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Landing</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="styles.css" />
 
-    <!-- <summary>Chart.js library for rendering charts</summary> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+        <!-- <summary>Chart.js library for rendering charts</summary> -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
 
-<body>
-    <!-- <summary>Navigation bar with brand logo, links, and login/signup buttons</summary> -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="landing.html">
-                <img src="images/bumblestudiologo.png" alt="Logo" width="70" height="50">
-                Pattern of Thought
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-                <ul class="navbar-nav">
-                    <li><a href="signup.html" class="btn btn-light">Sign Up</a></li>
-                    <li><a href="login.html" class="btn btn-light">Log In</a></li>
+    <body>
+        <!-- <summary>Navigation bar with brand logo, links, and login/signup buttons</summary> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="landing.html">
+                    <img src="images/bumblestudiologo.png" alt="Logo" width="70" height="50">
+                    Pattern of Thought
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <ul class="navbar-nav">
+                        <li><a href="signup.html" class="btn btn-ocean me-2">Sign Up</a></li>
+                        <li><a href="login.html" class="btn btn-ocean">Log In</a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- <summary>Hero section with welcome message, description, and call-to-action button</summary> -->
+        <header class="hero-section text-center text-white d-flex flex-column justify-content-center align-items-center"
+            style="min-height:70vh; background: linear-gradient(to bottom, #c1dfe6, #6993aa);">
+            <!-- <summary>Main headline of the hero section</summary> -->
+            <h1 class="display-4 fw-bold mb-3">Welcome to Pattern of Thought</h1>
+            <!-- <summary>Subheading describing the website purpose</summary> -->
+            <p class="lead mb-4">Learn about OCD, play our game, compete against friends!</p>
+            <!-- <summary>Call-to-action button linking to Sign Up page</summary> -->
+            <a href="signup.html" class="btn btn-light btn-lg">Get Started</a>
+        </header>
+
+        <!-- <summary>Section displaying key statistics with charts for downloads and best cleanup times</summary> -->
+        <section class="container my-5">
+            <div class="row g-4 justify-content-center">
+
+
+                <div class="col-md-6">
+                    <div class="card shadow rounded-4 text-center p-3">
+                        <h5 class="fw-bold text-primary mb-3">Number of Players</h5>
+                        <canvas id="playersChart"></canvas>
+                    </div>
+                </div>
+
+
+                <!-- <summary>Best Cleanup Time per Habitat card with chart</summary> -->
+                <!-- Chart: Most Played Scene -->
+                <div class="col-md-6">
+                    <div class="card shadow rounded-4 text-center p-3">
+                        <h5 class="fw-bold text-primary mb-3">Most Played of each Scene</h5>
+                        <canvas id="scenesChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- <summary>Explore section with interactive cards linking to Redeem, Leaderboard, and About Us</summary> -->
+        <section class="container my-5">
+            <h2 class="text-center mb-5 text-primary fw-bold">Explore the Experience</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <!-- <summary>Redeem plushies card with image, description, and button</summary> -->
+                <div class="col">
+                    <a href="achievements.html" class="text-decoration-none">
+                        <div class="card h-100 text-center shadow-sm border-0 p-4 explore-card">
+                            <img src="images/badge.png" alt="Redeem Icon" width="120" class="mx-auto mb-3">
+                            <h4 class="fw-bold text-primary">View Achievments</h4>
+                            <p class="text-muted">View your badges earned while playing each experience!.</p>
+                            <button class="btn btn-outline-primary mt-2">Go to Achievments</button>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- <summary>Leaderboard card showing competition stats with image and button</summary> -->
+                <div class="col">
+                    <a href="leaderboard.html" class="text-decoration-none">
+                        <div class="card h-100 text-center shadow-sm border-0 p-4 explore-card">
+                            <img src="images/trophy.png" alt="Leaderboard Icon" width="120" class="mx-auto mb-3">
+                            <h4 class="fw-bold text-primary">Leaderboard</h4>
+                            <p class="text-muted">Compete with friends and see who has the fastest completion timing of each
+                                experience!</p>
+                            <button class="btn btn-outline-primary mt-2">View Leaderboard</button>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- <summary>About Us card linking to Learn More with image and description</summary> -->
+                <div class="col">
+                    <a href="about.html" class="text-decoration-none">
+                        <div class="card h-100 text-center shadow-sm border-0 p-4 explore-card">
+                            <img src="images/profile.png" alt="About Icon" width="120" class="mx-auto mb-3">
+                            <h4 class="fw-bold text-primary">Learn About Us</h4>
+                            <p class="text-muted">Discover our mission to spread more awarness on OCD.</p>
+                            <button class="btn btn-outline-primary mt-2">Learn More</button>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <summary>Footer section containing copyright and social media links</summary> -->
+        <footer class="footer bg-dark text-light py-4">
+            <div class="container d-flex justify-content-between align-items-center">
+                <span>&copy; 2025 Pattern of Thought</span>
+                <ul class="list-unstyled d-flex mb-0">
+                    <li class="ms-3"><a href="https://www.instagram.com/bumblestudos/" class="footer-link">Instagram</a>
+                    </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </footer>
+        <!-- <summary>Bootstrap JS bundle for interactive components like navbar toggle</summary> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- <summary>Hero section with welcome message, description, and call-to-action button</summary> -->
-    <header class="hero-section text-center text-white d-flex flex-column justify-content-center align-items-center"
-        style="min-height:70vh; background: linear-gradient(to bottom, #c1dfe6, #6993aa);">
-        <!-- <summary>Main headline of the hero section</summary> -->
-        <h1 class="display-4 fw-bold mb-3">Welcome to Pattern of Thought</h1>
-        <!-- <summary>Subheading describing the website purpose</summary> -->
-        <p class="lead mb-4">Learn about OCD, play our game, compete against friends!</p>
-        <!-- <summary>Call-to-action button linking to Sign Up page</summary> -->
-        <a href="signup.html" class="btn btn-light btn-lg">Get Started</a>
-    </header>
+        <!-- <summary>Import Firebase configuration for connecting to Firebase services</summary> -->
+        <script type="module">
+            import { firebaseconfig } from "./js/firebase-config.js";
+        </script>
 
-    <!-- <summary>Section displaying key statistics with charts for downloads and best cleanup times</summary> -->
-    <section class="container my-5">
-        <div class="row g-4 justify-content-center">
-    
-    
-            <div class="col-md-6">
-                <div class="card shadow rounded-4 text-center p-3">
-                    <h5 class="fw-bold text-primary mb-3">Number of Players</h5>
-                    <canvas id="playersChart"></canvas>
-                </div>
-            </div>
-    
-    
-            <!-- <summary>Best Cleanup Time per Habitat card with chart</summary> -->
-            <!-- Chart: Most Played Scene -->
-            <div class="col-md-6">
-                <div class="card shadow rounded-4 text-center p-3">
-                    <h5 class="fw-bold text-primary mb-3">Most Played of each Scene</h5>
-                    <canvas id="scenesChart"></canvas>
-                </div>
-            </div>
-    
-        </div>
-    </section>
-    
-
-    <!-- <summary>Explore section with interactive cards linking to Redeem, Leaderboard, and About Us</summary> -->
-    <section class="container my-5">
-        <h2 class="text-center mb-5 text-primary fw-bold">Explore the Experience</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-
-            <!-- <summary>Redeem plushies card with image, description, and button</summary> -->
-            <div class="col">
-                <a href="achievement.html" class="text-decoration-none">
-                    <div class="card h-100 text-center shadow-sm border-0 p-4 explore-card">
-                        <img src="images/badge.png" alt="Redeem Icon" width="120" class="mx-auto mb-3">
-                        <h4 class="fw-bold text-primary">View Achievments</h4>
-                        <p class="text-muted">View your badges earned while playing each experience!.</p>
-                        <button class="btn btn-outline-primary mt-2">Go to Achievments</button>
-                    </div>
-                </a>
-            </div>
-
-            <!-- <summary>Leaderboard card showing competition stats with image and button</summary> -->
-            <div class="col">
-                <a href="leaderboard.html" class="text-decoration-none">
-                    <div class="card h-100 text-center shadow-sm border-0 p-4 explore-card">
-                        <img src="images/trophy.png" alt="Leaderboard Icon" width="120" class="mx-auto mb-3">
-                        <h4 class="fw-bold text-primary">Leaderboard</h4>
-                        <p class="text-muted">Compete with friends and see who has the fastest completion timing of each
-                            experience!</p>
-                        <button class="btn btn-outline-primary mt-2">View Leaderboard</button>
-                    </div>
-                </a>
-            </div>
-
-            <!-- <summary>About Us card linking to Learn More with image and description</summary> -->
-            <div class="col">
-                <a href="aboutus.html" class="text-decoration-none">
-                    <div class="card h-100 text-center shadow-sm border-0 p-4 explore-card">
-                        <img src="images/profile.png" alt="About Icon" width="120" class="mx-auto mb-3">
-                        <h4 class="fw-bold text-primary">Learn About Us</h4>
-                        <p class="text-muted">Discover our mission to spread more awarness on OCD.</p>
-                        <button class="btn btn-outline-primary mt-2">Learn More</button>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- <summary>Footer section containing copyright and social media links</summary> -->
-    <footer class="footer bg-dark text-light py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <span>&copy; 2025 Pattern of Thought</span>
-            <ul class="list-unstyled d-flex mb-0">
-                <li class="ms-3"><a href="https://www.instagram.com/bumblestudos/" class="footer-link">Instagram</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-    <!-- <summary>Bootstrap JS bundle for interactive components like navbar toggle</summary> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- <summary>Import Firebase configuration for connecting to Firebase services</summary> -->
-    <script type="module">
-        import { firebaseconfig } from "./js/firebase-config.js";
-    </script>
-
-</body>
+    </body>
 
 </html>
